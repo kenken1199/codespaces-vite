@@ -2,6 +2,7 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
+import Display from './components/Display';
 
 interface User {
   id : number ;
@@ -44,15 +45,7 @@ function App() {
       <p className="read-the-docs">
         Click on the Vite and React logos to learn more
       </p>
-      <h1>JSON-APIテスト</h1>
-          <hr/>
-          {users.map((userdata) => (
-            <div key={userdata.id}>
-              <h2>user-id:{userdata.userId}</h2>
-              <h3>title:{userdata.title}</h3>
-              <hr/>
-              </div>
-          ))}
+      <Display users={users} />
     </>
   )
 }
