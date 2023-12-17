@@ -3,13 +3,7 @@ import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 import "./App.css";
 import Display from "./components/Display";
-
-interface User {
-  id: number;
-  userId: number;
-  title: string;
-  completed: boolean;
-}
+import { User } from "./types/types";
 
 function App() {
   const [users, setUsers] = useState<User[]>([]);
@@ -41,7 +35,9 @@ function App() {
       <p className="read-the-docs">
         Click on the Vite and React logos to learn more
       </p>
-      <Display users={users} />
+      {users.map((post: User) => {
+        <Display key={post.id} {...post} />;
+      })}
     </>
   );
 }
