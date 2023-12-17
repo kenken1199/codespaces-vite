@@ -4,6 +4,7 @@ import viteLogo from "/vite.svg";
 import "./App.css";
 // import Display from "./components/Display";
 import { User } from "./types/types";
+import Display from "./components/Display";
 
 function App() {
   const [users, setUsers] = useState<User[]>([]);
@@ -36,11 +37,7 @@ function App() {
         Click on the Vite and React logos to learn more
       </p>
       {users.map((post: User) => {
-        return (
-          <div key={post.id}>
-            <h2>{post.title}</h2>
-          </div>
-        );
+        return <Display key={post.id} {...post} />;
       })}
     </>
   );
