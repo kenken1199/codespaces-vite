@@ -1,10 +1,10 @@
 import { User } from "../types/types";
 
-const Display = (props: User) => {
+const Display = ({ userId, title }: User) => {
   return (
     <div>
-      <h2>user-id:{props.userId}</h2>
-      <h3>title:{props.title}</h3>
+      <h2>user-id:{userId}</h2>
+      <h3>title:{title}</h3>
     </div>
   );
 };
