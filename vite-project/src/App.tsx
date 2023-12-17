@@ -36,9 +36,9 @@ function App() {
       <p className="read-the-docs">
         Click on the Vite and React logos to learn more
       </p>
-      {users.map((post: User) => {
-        return <Display key={post.id} {...post} />;
-      })}
+      {users.map((post: User) => (
+        <Display key={post.id} {...post} />
+      ))}
     </>
   );
 }
